@@ -1,0 +1,188 @@
+<header class="topbar">
+  <div class="container topbar__inner">
+    <a class="brand" href="#top" aria-label="Go to top">
+      <span class="brand__mark" aria-hidden="true">
+        <svg class="brand__icon" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="28" height="28" rx="8" stroke="url(#brandGrad)" stroke-width="2" />
+          <path d="M9 12h6M9 16h14M9 20h10" stroke="url(#brandGrad)" stroke-width="2" stroke-linecap="round" />
+          <defs>
+            <linearGradient id="brandGrad" x1="4" y1="4" x2="28" y2="28" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#38bdf8" />
+              <stop offset="1" stop-color="#818cf8" />
+            </linearGradient>
+          </defs>
+        </svg>
+      </span>
+      <span class="brand__name">Nishtha Singh</span>
+    </a>
+
+    <nav class="nav nav--desktop" aria-label="Primary">
+      <a
+        class="nav__link"
+        *ngFor="let link of navLinks"
+        [href]="link.href"
+        [class.nav__link--active]="activeSectionId === link.id"
+      >
+        {{ link.label }}
+      </a>
+    </nav>
+
+    <div class="topbar__cta">
+      <a class="btn ghost" href="assets/Nishtha_Singh_SE.pdf" download>Resume</a>
+      <a class="btn primary" href="#projects">View work</a>
+      <a class="btn primary" href="#contact">Hire me</a>
+    </div>
+
+    <button
+      type="button"
+      class="nav-toggle"
+      [class.nav-toggle--open]="menuOpen"
+      (click)="toggleMenu()"
+      [attr.aria-expanded]="menuOpen"
+      aria-controls="mobile-nav-panel"
+      [attr.aria-label]="menuOpen ? 'Close menu' : 'Open menu'"
+    >
+      <span class="nav-toggle__bar" aria-hidden="true"></span>
+      <span class="nav-toggle__bar" aria-hidden="true"></span>
+      <span class="nav-toggle__bar" aria-hidden="true"></span>
+    </button>
+  </div>
+
+  <div class="mobile-menu" *ngIf="menuOpen" id="mobile-nav-root">
+    <button type="button" class="mobile-menu__scrim" (click)="closeMenu()" aria-label="Close menu"></button>
+    <nav id="mobile-nav-panel" class="mobile-menu__panel" aria-label="Primary">
+      <div class="mobile-menu__links">
+        <a
+          class="mobile-menu__link"
+          *ngFor="let link of navLinks"
+          [href]="link.href"
+          [class.mobile-menu__link--active]="activeSectionId === link.id"
+          (click)="closeMenu()"
+        >
+          {{ link.label }}
+        </a>
+      </div>
+      <div class="mobile-menu__cta">
+        <a class="btn ghost mobile-menu__btn" href="assets/Pralipta_Swain_Software_Developer.pdf" download (click)="closeMenu()">Resume</a>
+        <a class="btn primary mobile-menu__btn" href="#projects" (click)="closeMenu()">View work</a>
+        <a class="btn primary mobile-menu__btn" href="#contact" (click)="closeMenu()">Hire me</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<section id="top" class="hero">
+  <div class="container hero__inner fade-in">
+    <div class="hero__copy">
+      <h1 class="hero__title">
+        Hi, I'm <span class="gradient-text">Nishtha Singh</span>.
+      </h1>
+
+      <p class="hero__role">Software Engineer</p>
+      <p class="hero__role-focus">Angular · TypeScript · Node.js · MongoDB </p>
+
+      <p class="lead">
+        I build and ship production-ready web applications using Angular (16+), TypeScript, and RxJS, complemented by Node.js REST APIs when required. Experienced in developing enterprise dashboards, implementing RBAC and JWT-based authentication, and creating responsive, accessible user interfaces.
+
+      </p>
+
+      <div class="hero__actions">
+        <a class="btn primary" href="#projects">See projects</a>
+        <a class="btn ghost" href="#contact">Get in touch</a>
+      </div>
+    </div>
+
+    <div class="hero__card card" aria-label="Quick summary">
+      <div class="hero__stats">
+        <div class="stat">
+          <div class="stat__value">1.5+ years</div>
+          <div class="stat__label">Professional frontend delivery</div>
+        </div>
+        <div class="stat">
+          <div class="stat__value">Angular 16+</div>
+          <div class="stat__label">TypeScript · RxJS · Node.js APIs</div>
+        </div>
+        <div class="stat">
+          <div class="stat__value">RBAC · JWT</div>
+          <div class="stat__label">Multi-role enterprise &amp; B2B UI</div>
+        </div>
+      </div>
+
+      <div class="hero__links">
+        <p class="hero__links-kicker muted">Contact &amp; profiles</p>
+        <div class="hero__socials" aria-label="Email, phone, and social profiles">
+          <a
+            class="icon-btn"
+            href="mailto:nishthasingh116@gmail.com"
+            aria-label="Email nishthasingh116@gmail.com"
+            title="nishthasingh116@gmail.com"
+          >
+            <svg class="hero-contact-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path
+                fill="none"
+                d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <polyline
+                fill="none"
+                points="22,6 12,13 2,6"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </a>
+          <a
+            class="icon-btn"
+            href="tel:+918931053903"
+            aria-label="Phone +91 89310 53903"
+            title="+91 89310 53903"
+          >
+            <svg class="hero-contact-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path
+                fill="none"
+                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </a>
+          <a
+            class="icon-btn"
+            href="https://www.linkedin.com/in/nishthasingh-sde/"
+            target="_blank"
+            rel="noreferrer noopener"
+            aria-label="LinkedIn"
+            title="LinkedIn"
+          >
+            <img
+              class="icon"
+              alt=""
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg"
+            />
+          </a>
+          <a
+            class="icon-btn"
+            href="https://github.com/Nishthasg"
+            target="_blank"
+            rel="noreferrer noopener"
+            aria-label="GitHub"
+            title="GitHub"
+          >
+            <img
+              class="icon icon--github-light"
+              alt=""
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
+            />
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

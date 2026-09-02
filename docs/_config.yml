@@ -1,0 +1,5 @@
+# Minimal Jekyll config so GitHub Pages can build when the site source is /docs.
+# For the Angular app, use Settings → Pages → Build: GitHub Actions (see workflow deploy-github-pages.yml).
+title: Portfolio
+description: Pralipta Swain — portfolio (Angular)
+theme: jekyll-theme-primer

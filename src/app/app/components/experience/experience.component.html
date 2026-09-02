@@ -1,0 +1,30 @@
+<section id="experience" class="section" appScrollReveal>
+  <div class="container fade-in">
+    <h2>Experience</h2>
+    <p class="lead">
+     Software Developer with 2 years of experience building scalable web applications using Angular, TypeScript, Bootstrap, and REST APIs. Experienced in developing B2B procurement platforms and enterprise pension portals, implementing secure authentication, optimizing performance, and managing large-scale data. Skilled in responsive UI development, API integration, debugging, and AI-assisted development workflows.
+
+    </p>
+
+    <div class="timeline">
+      <article class="timeline__item card" *ngFor="let item of experience; trackBy: trackByCompany">
+        <div class="timeline__meta">
+          <h3 class="timeline__role">{{ item.role }}</h3>
+          <p class="timeline__company muted">{{ item.company }}</p>
+          <p class="muted timeline__period">{{ item.period }}</p>
+        </div>
+
+        <div class="timeline__stack">
+          <span class="timeline__stack-label">Tech stack</span>
+          <div class="timeline__tech">
+            <span class="chip" *ngFor="let t of item.tech">{{ t }}</span>
+          </div>
+        </div>
+
+        <ul class="timeline__list">
+          <li *ngFor="let h of item.highlights">{{ h }}</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>

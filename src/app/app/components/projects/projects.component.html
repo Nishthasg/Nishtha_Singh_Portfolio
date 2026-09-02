@@ -1,0 +1,43 @@
+<section id="projects" class="section" appScrollReveal>
+  <div class="container fade-in">
+    <div class="projects-head">
+      <div>
+        <h2>Projects</h2>
+        <p class="lead">
+          Selected work: Angular architecture, RBAC-heavy flows, and integration with Node.js backends—
+          patterns I use in production delivery.
+        </p>
+      </div>
+      <!-- <div class="projects-cta">
+        <a class="btn ghost" href="assets/Pralipta_Swain_Software_Developer.pdf" download>Download resume</a>
+      </div> -->
+    </div>
+
+    <div class="grid grid-2">
+      <article class="card project" *ngFor="let p of projects; trackBy: trackByTitle">
+        <div class="project__top">
+          <h3>{{ p.title }}</h3>
+          <a
+            *ngIf="p.link"
+            class="project__link"
+            [href]="p.link"
+            target="_blank"
+            rel="noreferrer noopener"
+            [attr.aria-label]="'View ' + p.title + ' (opens in new tab)'"
+          >
+            Live →
+          </a>
+        </div>
+        <p class="muted project__sub">{{ p.subtitle }}</p>
+
+        <ul class="project__list">
+          <li *ngFor="let b of p.bullets">{{ b }}</li>
+        </ul>
+
+        <div class="project__tags">
+          <span class="chip" *ngFor="let t of p.tags">{{ t }}</span>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
