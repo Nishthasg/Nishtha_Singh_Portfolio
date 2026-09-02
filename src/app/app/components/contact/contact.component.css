@@ -195,6 +195,7 @@
 }
 
 .git-form {
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: 18px;
@@ -281,6 +282,40 @@
   color: #f87171;
 }
 
+.git-honeypot {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.git-status {
+  margin: 0;
+  padding: 10px 12px;
+  border-radius: 10px;
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.git-status--success {
+  color: #86efac;
+  background: rgba(22, 163, 74, 0.16);
+  border: 1px solid rgba(74, 222, 128, 0.28);
+}
+
+.git-status--error {
+  color: #fecaca;
+  background: rgba(220, 38, 38, 0.14);
+  border: 1px solid rgba(248, 113, 113, 0.28);
+}
+
+.git-status__link {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
 .git-form__actions {
   display: flex;
   justify-content: flex-end;
@@ -313,6 +348,13 @@
 
 .git-submit:active {
   transform: translateY(0);
+}
+
+.git-submit:disabled {
+  cursor: wait;
+  opacity: 0.72;
+  transform: none;
+  filter: none;
 }
 
 .git-submit:focus-visible {
